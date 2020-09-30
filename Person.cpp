@@ -19,63 +19,42 @@
  * @param age
  */
 Person::Person(std::string first_name, std::string last_name, float age) 
-    : m_age(age), m_firstName(first_name), m_lastName(last_name), m_age(age)
+    :  m_firstName(first_name), m_lastName(last_name), m_age(age)
 {
 
 }
 
-/**
- * @return float
- */
-float Person::getAge() const
+float Person::getAge()
 {
     return m_age;
 }
 
-/**
- * @param value
- */
-void Person::setAge(float value) const
+float Person::setAge(float value)
 {
     m_age = value;
 }
 
-/**
- * @return std::string
- */
-std::string Person::getFirstName() const
+std::string Person::getFirstName()
 {
     return m_firstName;
 }
 
-/**
- * @param value
- */
-void Person::setFirstName(const std::string& value) 
+std::string Person::setFirstName(std::string value) 
 {
     m_firstName = value;
 }
 
-/**
- * @return std::string
- */
-std::string Person::getLastName() const
+std::string Person::getLastName()
 {
     return m_lastName;
 }
 
-/**
- * @param value
- */
-void Person::setLastName(const std::string& value) 
+std::string Person::setLastName(std::string value) 
 {
     m_lastName = value;
 }
 
-/**
- * @return void
- */
-void Person::SaysHello() const
+std::string Person::SaysHello()
 {
     std::cout << getFirstName() << " says Hello!" << std::endl;
 }
@@ -85,14 +64,10 @@ std::string Person::ToString()
     std::string outputString = "";
 
     outputString += "------------------------------------------\n";
-    outputString += "First Name: " + getFirstName();
-    outputString += "Last Name: " + getLastName();
-    outputString += "Age: " + std::to_string(getAge());
+    outputString += "First Name: " + getFirstName() + "\n";
+    outputString += "Last Name: " + getLastName() + "\n";
+    outputString += "Age: " + std::to_string(getAge()) + "\n";
     outputString += "------------------------------------------\n";
 
     return outputString;
 }
-
-/**
- * @return std::string
- */

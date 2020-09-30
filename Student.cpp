@@ -6,6 +6,8 @@
 
 
 #include "Student.h"
+#include <string>
+#include <iostream>
 
 /**
  * Student implementation
@@ -18,34 +20,35 @@
  * @param age
  * @param student_id
  */
-void Student::Student(string first_name, string last_name, float age, string student_id) {
+Student::Student(std::string first_name, std::string last_name, float age, std::string student_id) 
+    : Person(first_name, last_name, age), m_studentID(std::move(student_id))
+{
 
 }
 
-/**
- * @return string
- */
-string Student::getStudentID() {
-    return "";
+std::string Student::getStudentID()
+{
+    return m_studentID;
 }
 
-/**
- * @param value
- */
-void Student::setStudentID(string value) {
-
+std::string Student::setStudentID(std::string value)
+{
+    m_studentID = value;
 }
 
-/**
- * @return void
- */
-void Student::Studies() {
-    return;
+std::string Student::Studies()
+{
+    std::cout << getFirstName() << " is studying" << std::endl;
 }
 
-/**
- * @return string
- */
-string Student::ToString() {
+std::string Student::ToString() 
+{
+    std::string output_string;
+
+    output_string += Person::ToString();
+    output_string += "------------------------------------------\n";
+    output_string += "Student ID: " + getStudentID() + "\n";
+    output_string += "------------------------------------------\n";
+
     return "";
 }

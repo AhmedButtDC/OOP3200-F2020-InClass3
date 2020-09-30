@@ -24,23 +24,23 @@ float getAge();
 /**
  * @param value
  */
-void setAge(float value);
+float setAge(float value);
     
 std::string getFirstName();
     
 /**
  * @param value
  */
-void setFirstName(std::string value);
+std::string setFirstName(std::string value);
     
 std::string getLastName();
     
 /**
  * @param value
  */
-void setLastName(std::string value);
+std::string setLastName(std::string value);
     
-void SaysHello();
+std::string SaysHello();
     
 virtual std::string ToString();
 
